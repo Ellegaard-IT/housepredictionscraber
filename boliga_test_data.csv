@@ -1,101 +1,51 @@
-,addresse,post_nummer,boligstorrelse,grundstorrelse,bolig_type,vaerelser,etage,skatter,kaelderstorrelse,boligareal_tinglyst,toiletter,badevaerelser,ejendomsvaerdi_skat,pris,handelstype,carport,udhus
-0,"Nordre Frihavnsgade 84, 2. tv
-2100 København Ø",test,Boligstørrelse (BBR): 103 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 4,Sal: 2.,Skatter: 1667 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 94 m²",1,1,,830.869 kr.,Familieoverdragelse,0 m²,0 m²
-1,"Korsørgade 4, 4. 2
-2100 København Ø",test,Boligstørrelse (BBR): 44 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 1,Sal: 4.,Skatter: 783 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 39 m²",1,1,6.825 kr. / år,1.100.000 kr.,Familieoverdragelse,0 m²,0 m²
-2,"Strandboulevarden 36, st. tv
-2100 København Ø",test,Boligstørrelse (BBR): 102 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 3,Sal: 0,Skatter: 1760 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 92 m²",1,1,15.750 kr. / år,4.160.000 kr.,Almindeligt frit salg,0 m²,0 m²
-3,"Midtermolen 14, 1. tv
-2100 København Ø",test,Boligstørrelse (BBR): 84 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 1.,Skatter: 2320 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 75 m²",1,1,,4.000.000 kr.,Almindeligt frit salg,0 m²,0 m²
-4,"Marstalsgade 6, 4. th
-2100 København Ø",test,Boligstørrelse (BBR): 85 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 3,Sal: 4.,Skatter: 1872 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 77 m²",1,1,12.075 kr. / år,5.935.000 kr.,Almindeligt frit salg,0 m²,0 m²
-5,"Horsensgade 6, 4. th
-2100 København Ø",test,Boligstørrelse (BBR): 63 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 4.,Skatter: 1076 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 55 m²",1,1,9.030 kr. / år,1.725.000 kr.,Familieoverdragelse,0 m²,0 m²
-6,"Aggersborggade 9, 2. tv
-2100 København Ø",test,Boligstørrelse (BBR): 80 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 3,Sal: 2.,Skatter: 1300 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 72 m²",1,1,,1.587.552 kr.,Familieoverdragelse,0 m²,0 m²
-7,"Halsskovgade 2, 1. 108
-2100 København Ø",test,Boligstørrelse (BBR): 41 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 1,Sal: 1.,Skatter: 805 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 36 m²",1,1,,731.000 kr.,Familieoverdragelse,0 m²,0 m²
-8,"Emdrupvej 14, 2. tv
-2100 København Ø",test,Boligstørrelse (BBR): 66 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 3,Sal: 2.,Skatter: 1089 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 60 m²",1,1,8.190 kr. / år,1.200.000 kr.,Almindeligt frit salg,0 m²,0 m²
-9,"Manøgade 1, 2. tv
-2100 København Ø",test,Boligstørrelse (BBR): 101 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 4,Sal: 2.,Skatter: 1646 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 92 m²",1,1,,5.650.000 kr.,Almindeligt frit salg,0 m²,0 m²
-10,"Jagtvej 213, 10. 3
-2100 København Ø",test,Boligstørrelse (BBR): 64 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 10.,Skatter: 1272 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 54 m²",1,1,9.030 kr. / år,3.195.000 kr.,Almindeligt frit salg,0 m²,0 m²
-11,"Amerika Plads 24B, 2. 2
-2100 København Ø",test,Boligstørrelse (BBR): 115 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 3,Sal: 2.,Skatter: 3047 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 103 m²",,,,,,,
-12,"Nyborggade 16, st.
-2100 København Ø",test,Boligstørrelse (BBR): 70 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 3,Sal: 0,Skatter: 1065 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 62 m²",1,1,10.290 kr. / år,2.850.000 kr.,Almindeligt frit salg,0 m²,0 m²
-13,"Svendborggade 14, 5. th
-2100 København Ø",test,Boligstørrelse (BBR): 71 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 3,Sal: 5.,Skatter: 1174 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 64 m²",1,1,9.870 kr. / år,3.425.000 kr.,Familieoverdragelse,0 m²,0 m²
-14,"Korsørgade 36, 3. th
-2100 København Ø",test,Boligstørrelse (BBR): 65 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 3.,Skatter: 1137 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 57 m²",1,1,,1.610.000 kr.,Familieoverdragelse,0 m²,0 m²
-15,"Drejøgade 26B, 3. 303
-2100 København Ø",test,Boligstørrelse (BBR): 71 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 3.,Skatter: 1144 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 66 m²",1,1,,3.500.000 kr.,Almindeligt frit salg,0 m²,0 m²
-16,"Rosenvængets Hovedvej 26, 2. tv
-2100 København Ø",test,Boligstørrelse (BBR): 87 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 3,Sal: 2.,Skatter: 1825 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 81 m²",1,1,,5.550.000 kr.,Almindeligt frit salg,0 m²,0 m²
-17,"Gammel Kalkbrænderi Vej 30, st. th
-2100 København Ø",test,Boligstørrelse (BBR): 56 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 0,Skatter: 910 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 48 m²",1,1,7.980 kr. / år,1.138.047 kr.,Almindeligt frit salg,0 m²,0 m²
-18,"Indiakaj 11, 3. mf
-2100 København Ø",test,Boligstørrelse (BBR): 75 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 3.,Skatter: 2102 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 70 m²",1,1,,4.600.000 kr.,Almindeligt frit salg,0 m²,0 m²
-19,"Silkeborggade 34, 3. th
-2100 København Ø",test,Boligstørrelse (BBR): 73 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 3.,Skatter: 1286 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 65 m²",1,1,,1.897.500 kr.,Familieoverdragelse,0 m²,0 m²
-20,"Marstalsgade 30, st. tv
-2100 København Ø",test,Boligstørrelse (BBR): 85 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 3,Sal: 0,Skatter: 1442 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 77 m²",1,1,,4.480.000 kr.,Almindeligt frit salg,0 m²,0 m²
-21,"Nordre Frihavnsgade 100A, 1. th
-2100 København Ø",test,Boligstørrelse (BBR): 57 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 1.,Skatter: 980 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 48 m²",1,1,,2.795.000 kr.,Almindeligt frit salg,0 m²,0 m²
-22,"Strandvejen 63, 3. th
-2100 København Ø",test,Boligstørrelse (BBR): 264 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 7,Sal: 3.,Skatter: 5853 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 243 m²",2,1,,7.187.500 kr.,Familieoverdragelse,0 m²,0 m²
-23,"Ourøgade 25, 2. tv
-2100 København Ø",test,Boligstørrelse (BBR): 56 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 2.,Skatter: 991 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 51 m²",1,1,8.295 kr. / år,3.225.000 kr.,Almindeligt frit salg,0 m²,0 m²
-24,"Gustav Adolfs Gade 10, st. tv
-2100 København Ø",test,Boligstørrelse (BBR): 132 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 5,Sal: 0,Skatter: 2174 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 123 m²",1,1,,3.322.500 kr.,Familieoverdragelse,0 m²,0 m²
-25,"Nygårdsvej 41B, 4. th
-2100 København Ø",test,Boligstørrelse (BBR): 80 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 3,Sal: 4.,Skatter: 1407 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 74 m²",1,1,11.025 kr. / år,3.836.500 kr.,Almindeligt frit salg,0 m²,0 m²
-26,"Århusgade 16, 2. tv
-2100 København Ø",test,Boligstørrelse (BBR): 52 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 2.,Skatter: 845 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 44 m²",1,1,,3.400.000 kr.,Almindeligt frit salg,0 m²,0 m²
-27,"Engelstedsgade 45, 1.
-2100 København Ø",test,Boligstørrelse (BBR): 57 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 1.,Skatter: 1159 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 50 m²",1,1,6.615 kr. / år,2.850.000 kr.,Almindeligt frit salg,0 m²,0 m²
-28,"Sankt Kjelds Plads 8, 1. tv
-2100 København Ø",test,Boligstørrelse (BBR): 67 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 1.,Skatter: 1130 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 60 m²",1,1,,1.400.000 kr.,Familieoverdragelse,0 m²,0 m²
-29,"Marstalsgade 18, 5. th
-2100 København Ø",test,Boligstørrelse (BBR): 52 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 5.,Skatter: 876 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 46 m²",1,1,,1.437.500 kr.,Familieoverdragelse,0 m²,0 m²
-30,"Drejøgade 26B, 4. 404
-2100 København Ø",test,Boligstørrelse (BBR): 39 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 1,Sal: 4.,Skatter: 701 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 34 m²",1,1,5.670 kr. / år,1.995.000 kr.,Almindeligt frit salg,0 m²,0 m²
-31,"Marstalsgade 30, 4. th
-2100 København Ø",test,Boligstørrelse (BBR): 54 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 4.,Skatter: 883 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 46 m²",1,1,7.875 kr. / år,3.250.000 kr.,Almindeligt frit salg,0 m²,0 m²
-32,"Bryggervangen 16, 1. tv
-2100 København Ø",test,Boligstørrelse (BBR): 62 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 1.,Skatter: 1009 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 57 m²",1,1,8.505 kr. / år,1.437.500 kr.,Familieoverdragelse,0 m²,0 m²
-33,"Aldersrogade 7, st. tv
-2100 København Ø",test,Boligstørrelse (BBR): 53 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 0,Skatter: 758 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 46 m²",1,1,,2.595.000 kr.,Almindeligt frit salg,0 m²,0 m²
-34,"Kildevældsgade 66, 1. th
-2100 København Ø",test,Boligstørrelse (BBR): 59 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 1.,Skatter: 972 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 52 m²",1,1,8.820 kr. / år,2.850.000 kr.,Almindeligt frit salg,0 m²,0 m²
-35,"Hildursgade 3, st. th
-2100 København Ø",test,Boligstørrelse (BBR): 71 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 3,Sal: 0,Skatter: 1118 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 66 m²",1,1,,3.200.000 kr.,Familieoverdragelse,0 m²,0 m²
-36,"Ålborggade 20, 1. th
-2100 København Ø",test,Boligstørrelse (BBR): 55 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 1.,Skatter: 903 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 46 m²",1,1,,3.250.000 kr.,Almindeligt frit salg,0 m²,0 m²
-37,"Østerbrogade 92, 3. th
-2100 København Ø",test,Boligstørrelse (BBR): 181 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 4,Sal: 3.,Skatter: 2903 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 168 m²",2,1,,12.325.000 kr.,Almindeligt frit salg,0 m²,0 m²
-38,"Marstalsgade 19, 2. th
-2100 København Ø",test,Boligstørrelse (BBR): 52 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 2.,Skatter: 878 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 44 m²",1,1,7.665 kr. / år,3.225.000 kr.,Almindeligt frit salg,0 m²,0 m²
-39,"Langelinie Allé 5, st. 5
-2100 København Ø",test,Boligstørrelse (BBR): 73 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 0,Skatter: 1751 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 57 m²",1,1,13.650 kr. / år,4.300.000 kr.,Almindeligt frit salg,0 m²,0 m²
-40,"Dampfærgevej 12, 5. 1
-2100 København Ø",test,Boligstørrelse (BBR): 76 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 5.,Skatter: 2291 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 68 m²",1,1,14.700 kr. / år,5.295.000 kr.,Almindeligt frit salg,0 m²,0 m²
-41,"Brammingegade 8, 2. th
-2100 København Ø",test,Boligstørrelse (BBR): 62 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 2.,Skatter: 1003 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 54 m²",1,1,8.715 kr. / år,1.520.000 kr.,Familieoverdragelse,0 m²,0 m²
-42,"Marstalsgade 31, 1. tv
-2100 København Ø",test,Boligstørrelse (BBR): 56 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 1.,Skatter: 934 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 48 m²",1,1,,1.350.000 kr.,Familieoverdragelse,0 m²,0 m²
-43,"Marstalsgade 31, 2. tv
-2100 København Ø",test,Boligstørrelse (BBR): 56 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 2.,Skatter: 934 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 48 m²",1,1,8.400 kr. / år,2.850.000 kr.,Almindeligt frit salg,0 m²,0 m²
-44,"Korsørgade 2, 1. 3
-2100 København Ø",test,Boligstørrelse (BBR): 53 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 1,Sal: 1.,Skatter: 912 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 45 m²",1,1,,2.495.000 kr.,Almindeligt frit salg,0 m²,0 m²
-45,"Østerbrogade 56C, st. th
-2100 København Ø",test,Boligstørrelse (BBR): 183 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 6,Sal: 0,Skatter: 2868 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 219 m²",2,1,,937.500 kr.,Familieoverdragelse,0 m²,0 m²
-46,"Amerika Plads 26B, 5. 4
-2100 København Ø",test,Boligstørrelse (BBR): 72 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 5.,Skatter: 1921 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 63 m²",1,1,14.175 kr. / år,4.600.000 kr.,Almindeligt frit salg,0 m²,0 m²
-47,"Marstalsgade 49, 4. th
-2100 København Ø",test,Boligstørrelse (BBR): 55 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 4.,Skatter: 868 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 45 m²",1,1,,3.175.000 kr.,Almindeligt frit salg,0 m²,0 m²
-48,"Jagtvej 187, 4. tv
-2100 København Ø",test,Boligstørrelse (BBR): 85 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 3,Sal: 4.,Skatter: 1071 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 76 m²",1,1,9.100 kr. / år,4.900.000 kr.,Almindeligt frit salg,0 m²,0 m²
-49,"Marstalsgade 40, 2. th
-2100 København Ø",test,Boligstørrelse (BBR): 54 m²,Grundstørrelse: 0 m²,Ejerlejlighed,Værelser: 2,Sal: 2.,Skatter: 922 kr. / md.,Kælderstørrelse: 0 m²,"Boligareal, tinglyst: 47 m²",1,1,,1.062.500 kr.,Familieoverdragelse,0 m²,0 m²
+,post_nummer,boligstorrelse,grundstorrelse,bolig_type,vaerelser,etage,byggeår,om_byggeår,skatter,kaelderstorrelse,boligareal_tinglyst,toiletter,badevaerelser,pris,handelstype,carport,udhus,salgsmaned,salgsar
+0,2000,78,0,Ejerlejlighed,3,8,1944,0,1289,0,68,1,1,4700000,Almindeligt frit salg,0,0,10,2021
+1,2300,44,0,Ejerlejlighed,1,2,1975,0,648,0,36,1,1,1000000,Familieoverdragelse,0,0,10,2021
+2,2200,54,0,Ejerlejlighed,2,3,1935,0,842,0,49,1,1,2145000,Almindeligt frit salg,0,0,10,2021
+3,2000,110,0,Ejerlejlighed,4,4,2007,0,2487,0,102,1,1,8900000,Almindeligt frit salg,0,0,10,2021
+4,1428,47,0,Ejerlejlighed,2,5,1901,0,852,0,38,1,1,3450000,Almindeligt frit salg,0,0,10,2021
+5,2100,103,0,Ejerlejlighed,4,2,1892,1964,1667,0,94,1,1,830869,Familieoverdragelse,0,0,10,2021
+6,2860,95,0,Ejerlejlighed,3,1,2006,0,1815,0,84,1,1,3250000,Almindeligt frit salg,0,0,10,2021
+7,2100,44,0,Ejerlejlighed,1,4,1963,0,783,0,39,1,1,1100000,Familieoverdragelse,0,0,10,2021
+8,2720,114,0,Ejerlejlighed,5,2,1940,0,1435,0,55,2,2,1297500,Almindeligt frit salg,0,0,10,2021
+9,2100,102,0,Ejerlejlighed,3,0,1931,0,1760,0,92,1,1,4160000,Almindeligt frit salg,0,0,10,2021
+10,2500,62,0,Ejerlejlighed,2,1,1930,0,845,0,57,1,1,2200000,Almindeligt frit salg,0,0,10,2021
+11,2300,47,0,Ejerlejlighed,2,0,1962,0,662,0,42,1,1,1000000,Familieoverdragelse,0,0,10,2021
+12,2700,40,0,Ejerlejlighed,2,0,1934,0,679,0,35,1,1,1551000,Almindeligt frit salg,0,0,10,2021
+13,2500,59,0,Ejerlejlighed,2,0,1930,0,865,0,54,1,1,1013500,Familieoverdragelse,0,0,10,2021
+14,2635,97,0,Ejerlejlighed,3,2,1976,0,1061,0,93,1,1,2220000,Almindeligt frit salg,0,0,10,2021
+15,1700,93,0,Ejerlejlighed,3,2,1908,1982,1609,0,84,1,1,597000,Almindeligt frit salg,0,0,10,2021
+16,2450,103,0,Ejerlejlighed,4,3,2006,0,1952,0,94,1,1,6098000,Almindeligt frit salg,0,0,10,2021
+17,1722,54,0,Ejerlejlighed,2,1,1902,0,857,0,46,1,1,3250000,Almindeligt frit salg,0,0,10,2021
+18,2610,107,0,Ejerlejlighed,3,3,1967,0,1384,0,106,1,1,1350000,Familieoverdragelse,0,0,10,2021
+19,2000,61,0,Ejerlejlighed,2,4,1953,0,1012,0,56,1,1,1020000,Familieoverdragelse,0,0,10,2021
+20,2400,128,0,Ejerlejlighed,3,2,1989,0,2068,0,106,1,1,2112500,Almindeligt frit salg,0,0,10,2021
+21,1957,90,0,Ejerlejlighed,4,1,1899,0,1505,0,82,1,1,6000000,Almindeligt frit salg,0,0,10,2021
+22,2770,71,0,Ejerlejlighed,3,1,1953,0,1069,0,71,1,1,1000000,Familieoverdragelse,0,0,10,2021
+23,2400,55,0,Ejerlejlighed,2,0,1950,0,1041,0,50,1,1,1240000,Familieoverdragelse,0,0,10,2021
+24,2100,84,0,Ejerlejlighed,2,1,1994,0,2320,0,75,1,1,4000000,Almindeligt frit salg,0,0,10,2021
+25,2635,97,0,Ejerlejlighed,3,0,1974,0,957,0,105,1,1,2060000,Almindeligt frit salg,0,0,10,2021
+26,2900,73,0,Ejerlejlighed,3,4,1899,1999,1131,0,64,1,1,1800000,Øvrigt,0,0,10,2021
+27,2500,108,0,Ejerlejlighed,5,3,1906,0,1882,0,95,1,1,5400000,Almindeligt frit salg,0,0,10,2021
+28,2665,47,0,Ejerlejlighed,2,2,1966,0,532,0,39,1,1,1280000,Almindeligt frit salg,0,0,10,2021
+29,2920,136,0,Ejerlejlighed,5,1,1936,0,2205,0,130,1,1,6000000,Almindeligt frit salg,0,0,9,2021
+30,2000,92,0,Ejerlejlighed,2,2,1960,0,1406,0,81,1,1,3000000,Almindeligt frit salg,0,0,9,2021
+31,2500,62,0,Ejerlejlighed,2,2,1912,0,905,0,56,1,1,900000,Familieoverdragelse,0,0,9,2021
+32,2665,86,0,Ejerlejlighed,3,1,1966,0,857,0,78,1,1,1985000,Almindeligt frit salg,0,0,9,2021
+33,2300,96,0,Ejerlejlighed,3,2,1906,0,1328,0,83,1,1,1870000,Familieoverdragelse,0,0,9,2021
+34,2650,47,0,Ejerlejlighed,1,2,1974,2007,752,0,40,1,1,1200000,Familieoverdragelse,0,0,9,2021
+35,2200,84,0,Ejerlejlighed,3,3,1906,0,1122,0,77,1,1,1750000,Familieoverdragelse,0,0,9,2021
+36,2740,117,0,Ejerlejlighed,3,1,2006,0,1801,0,112,1,1,3500000,Almindeligt frit salg,0,0,9,2021
+37,2300,139,0,Ejerlejlighed,3,1,1962,0,2450,0,133,2,1,7825000,Almindeligt frit salg,0,0,9,2021
+38,2680,100,0,Ejerlejlighed,4,0,1972,0,1242,0,96,1,1,1150000,Almindeligt frit salg,0,0,9,2021
+39,2800,59,0,Ejerlejlighed,2,0,1938,0,855,0,54,1,1,1775000,Familieoverdragelse,0,0,9,2021
+40,2620,49,0,Ejerlejlighed,2,3,1971,1989,671,0,43,1,1,1166000,Familieoverdragelse,0,0,9,2021
+41,2200,58,0,Ejerlejlighed,2,4,1908,0,777,0,51,1,1,1100000,Familieoverdragelse,0,0,9,2021
+42,2500,73,0,Ejerlejlighed,3,2,1959,0,1280,0,70,1,1,3675000,Almindeligt frit salg,0,0,9,2021
+43,2750,86,0,Ejerlejlighed,4,1,1900,0,12949,25,0,1,1,492714,0,0,0,9,2021
+44,2800,84,0,Ejerlejlighed,3,2,1987,0,2005,0,84,1,1,6180000,Almindeligt frit salg,0,0,9,2021
+45,2450,242,0,Ejerlejlighed,4,9,2008,0,5914,0,229,2,2,16000000,Almindeligt frit salg,0,0,9,2021
+46,2300,50,0,Ejerlejlighed,2,2,1902,0,626,0,42,1,1,382500,Almindeligt frit salg,0,0,9,2021
+47,2100,85,0,Ejerlejlighed,3,4,1900,0,1872,0,77,1,1,5935000,Almindeligt frit salg,0,0,9,2021
+48,2850,115,0,Ejerlejlighed,4,4,1968,0,2177,0,109,2,1,3900000,Almindeligt frit salg,0,0,9,2021
+49,2100,63,0,Ejerlejlighed,2,4,1908,0,1076,0,55,1,1,1725000,Familieoverdragelse,0,0,9,2021
