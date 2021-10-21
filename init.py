@@ -42,13 +42,13 @@ class Home:
             return 3
         elif(input == 'apr.'):
             return 4
-        elif(input == 'maj.'):
+        elif(input == 'maj'):
             return 5
         elif(input == 'jun.'):
             return 6
         elif(input == 'jul.'):
             return 7
-        elif(input == 'aut.'):
+        elif(input == 'aug.'):
             return 8
         elif(input == 'sep.'):
             return 9
