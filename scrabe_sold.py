@@ -20,14 +20,13 @@ chrome_options.add_argument('start-maximized')
 
 print('\n\n-------------------------------- Starting Scrape -------------------------------\n\n')
 driver = webdriver.Chrome(options=chrome_options)
-driver.get("https://www.boliga.dk/salg/resultater?searchTab=1&sort=date-d&page=1&propertyType=3&zipcodeFrom=1000&zipcodeTo=2990&salesDateMin=2018")
+driver.get("https://www.boliga.dk/salg/resultater?searchTab=1&propertyType=3&salesDateMin=2018&saleType=1&zipcodeFrom=1000&zipcodeTo=2990&sort=date-d&page=1")
 
-driver.implicitly_wait(30)
+driver.implicitly_wait(5)
 
 homes = []
 first_page = True
 last_page = False
-fails = 0
 
 class Home:
     def __init__(self,url) -> None:
@@ -77,26 +76,23 @@ def next_page():
     except:
         last_page = True
 
-for i in range(811):
+for i in range(726):
     take_all()
 
-data = {'post_nummer': [],
+data = {'url': [],
+        'post_nummer': [],
         'boligstorrelse': [],
         'grundstorrelse': [],
-        'bolig_type': [],
         'vaerelser': [],
         'etage': [],
         'byggeår':[],
         'om_byggeår':[],
         'skatter': [],
-        'kaelderstorrelse': [],
         'boligareal_tinglyst': [],
         'toiletter': [],
         'badevaerelser': [],
         'pris': [],
         'handelstype': [],
-        'carport': [],
-        'udhus': [],
         'salgsmaned': [],
         'salgsar': []
     }
@@ -108,8 +104,11 @@ for home in tqdm(homes):
     home.handelstype = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-inner/div[3]/app-sales-overview/div/div[1]/div/div/div[2]/table/tbody/tr[1]/td[4]/span[2]').text
     driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-inner/div[3]/div/a[1]').click()
     time.sleep(1)
+
+
     #Post_nummer
     try:
+        data['url'].append(home.url)
         ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[1]/div/app-bbr-inner-details/div/div[1]/div[1]/div[1]/div[1]/span')
         ele = ele.text.split("\n")
         ele = ele[1].split(" ")
@@ -136,11 +135,6 @@ for home in tqdm(homes):
         data["grundstorrelse"].append(temp)
     except:
         data["grundstorrelse"].append(' ')
-    #Bolig_type
-    try:
-        data["bolig_type"].append(driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[1]/div/app-bbr-inner-details/div/div[1]/div[1]/div[1]/div[1]/app-property-label/label/span').text)
-    except:
-        data["bolig_type"].append(' ')
     #Vaerelser
     try:
         ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[1]/div/app-bbr-inner-details/div/div[1]/div[1]/div[2]/div/app-property-detail-list/ul/li[3]/app-property-detail/app-tooltip/div/span[3]')
@@ -161,16 +155,6 @@ for home in tqdm(homes):
         data["skatter"].append(temp)
     except:
         data["skatter"].append(' ')
-    #Kaelderstorrelse
-    try:
-        ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[1]/div/app-bbr-inner-details/div/div[1]/div[1]/div[2]/div/app-property-detail-list/ul/li[7]/app-property-detail/app-tooltip/div/span[3]')
-        ele = [int(s) for s in ele.text.split() if s.isdigit()]
-        ele = [""+str(s) for s in ele]
-        temp = ""
-        for n in ele: temp += n
-        data["kaelderstorrelse"].append(temp)
-    except:
-        data["kaelderstorrelse"].append(' ')
     #Etage
     try:
         ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[1]/div/app-bbr-inner-details/div/div[1]/div[1]/div[2]/div/app-property-detail-list/ul/li[4]/app-property-detail/app-tooltip/div/span[3]')
@@ -254,28 +238,6 @@ for home in tqdm(homes):
     except:
         data["om_byggeår"].append(' ')
 
-    #Carport
-    try:
-        ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[4]/app-bbr-details-tabs/app-property-information/div/div[2]/div/div/app-generic-property-info-content[2]/div/div[2]/div/div[6]/div/span')
-        ele = [int(s) for s in ele.text.split() if s.isdigit()]
-        ele = [""+str(s) for s in ele]
-        temp = ""
-        for n in ele: temp += n
-        data["carport"].append(temp)
-    except:
-        data["carport"].append(' ')
-
-    #udhus
-    try:
-        ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[4]/app-bbr-details-tabs/app-property-information/div/div[2]/div/div/app-generic-property-info-content[2]/div/div[2]/div/div[8]/div/span')
-        ele = [int(s) for s in ele.text.split() if s.isdigit()]
-        ele = [""+str(s) for s in ele]
-        temp = ""
-        for n in ele: temp += n
-        data["udhus"].append(temp)
-    except:
-        data["udhus"].append(' ')
-
     #salgsdato
     try:
         ele = home.salgsdato.split(' ')
@@ -286,7 +248,5 @@ for home in tqdm(homes):
         data["salgsmaned"].append(' ')
         data["salgsar"].append(' ')
 
-df = pd.DataFrame(data,columns=['post_nummer','boligstorrelse','grundstorrelse','bolig_type','vaerelser','etage','byggeår','om_byggeår','skatter','kaelderstorrelse','boligareal_tinglyst','toiletter','badevaerelser','pris','handelstype','carport','udhus','salgsmaned','salgsar'])
-
-print(df.head())
-df.to_csv('boliga_test_data.csv')
+    df = pd.DataFrame(data,columns=['url','post_nummer','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris','handelstype','salgsmaned','salgsar'])
+    df.to_csv('boliga_test_data.csv',index=False)
