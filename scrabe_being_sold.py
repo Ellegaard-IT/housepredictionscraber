@@ -1,6 +1,7 @@
 from re import match
 import subprocess
 import sys
+import os
 from typing import Text
 
 import selenium
@@ -15,8 +16,8 @@ import time
 from tqdm import tqdm
 
 chrome_options = Options()
-#chrome_options.set_headless()
-chrome_options.add_argument('start-maximized')
+chrome_options.set_headless()
+#chrome_options.add_argument('start-maximized')
 
 print('\n\n-------------------------------- Starting Scrape -------------------------------\n\n')
 driver = webdriver.Chrome(options=chrome_options)
@@ -28,6 +29,11 @@ homes = []
 first_page = True
 last_page = False
 fails = 0
+df = None
+
+if os.path.isfile('boliga_data_being_sold.csv'):
+    df = pd.read_csv('boliga_data_being_sold.csv')
+    df = df.url
 
 class Home:
     def __init__(self,url) -> None:
@@ -67,18 +73,20 @@ def take_all():
     for site in driver.find_elements_by_tag_name('a.house-list-item'):
         try:
             url = site.get_attribute('href')
-            homes.append(Home(url))
+            for i in range(len(df)):
+                if df.iloc(i)[0] != url:
+                    homes.append(Home(url))
         except:
             print('failed getting url')
     next_page()
 def next_page():
     try:
         driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-housing-list/div[2]/app-housing-list-results/div/div[1]/div[3]/div/div/div[3]/app-pagination/div/div[4]/a').click()
-        time.sleep(5)
+        time.sleep(1)
     except:
         last_page = True
 
-for i in range(53):
+for i in tqdm(range(int(driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-housing-list/div[2]/app-housing-list-results/div/div[1]/div[3]/div/div/div[3]/app-pagination/div/div[4]/div/a').text))):
     take_all()
 
 data = {'url': [],
@@ -99,7 +107,7 @@ data = {'url': [],
 
 for home in tqdm(homes):
     if(home.url == 'https://www.boliga.dk/resultat' or home.url == None):continue
-    #time.sleep(1)
+    time.sleep(1)
     driver.get(str(home.url))
     time.sleep(1)
     home.price = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bvs/div/div[4]/div/div/div[1]/div[1]/div/app-bvs-property-price/div/div[2]/span[1]').text
@@ -241,6 +249,6 @@ for home in tqdm(homes):
         data["om_byggeår"].append(ele.text)
     except:
         data["om_byggeår"].append(' ')
-
+    
     df = pd.DataFrame(data,columns=['url','post_nummer','boligtype','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris'])
     df.to_csv('boliga_data_being_sold.csv',index=False)

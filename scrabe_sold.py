@@ -1,6 +1,7 @@
 from re import match
 import subprocess
 import sys
+import os
 from typing import Text
 
 import selenium
@@ -15,8 +16,8 @@ import time
 from tqdm import tqdm
 
 chrome_options = Options()
-#chrome_options.set_headless()
-chrome_options.add_argument('start-maximized')
+chrome_options.set_headless()
+#chrome_options.add_argument('start-maximized')
 
 print('\n\n-------------------------------- Starting Scrape -------------------------------\n\n')
 driver = webdriver.Chrome(options=chrome_options)
@@ -27,6 +28,10 @@ driver.implicitly_wait(5)
 homes = []
 first_page = True
 last_page = False
+
+if os.path.isfile('boliga_test_data.csv'):
+    df = pd.read_csv('boliga_test_data.csv')
+    df = df.url
 
 class Home:
     def __init__(self,url) -> None:
@@ -65,18 +70,21 @@ driver.find_element_by_id("declineButton").click()
 def take_all():
     for site in driver.find_elements_by_tag_name('a.text-primary.font-weight-bolder.text-left'):
         try:
-            homes.append(Home(site.get_attribute('href')))
+            url = site.get_attribute('href')
+            for i in range(len(df)):
+                if df.iloc(i)[0] != url:
+                    homes.append(Home(url))
         except:
             print(site.get_attribute('href'))
     next_page()
 def next_page():
     try:
         driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-properties-list/div[3]/div/div/app-pagination/div/div[4]/a').click()
-        time.sleep(5)
+        time.sleep(1)
     except:
         last_page = True
 
-for i in range(729):
+for i in tqdm(range(int(driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-properties-list/div[3]/div/div/app-pagination/div/div[4]/div/a').text))):
     take_all()
 
 data = {'url': [],
@@ -227,7 +235,7 @@ for home in tqdm(homes):
         driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[4]/app-bbr-details-tabs/app-property-information/div/div[1]/ul/li[7]/div[1]/span').click()
     except:
         print('failed')
-    time.sleep(0.5)
+    #time.sleep(0.5)
     
     #Byggeår
     try:
