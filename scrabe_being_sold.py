@@ -78,9 +78,8 @@ def next_page():
     except:
         last_page = True
 
-for i in range(54):
+for i in range(53):
     take_all()
-    break
 
 data = {'url': [],
         'post_nummer': [],
@@ -245,4 +244,3 @@ for home in tqdm(homes):
 
     df = pd.DataFrame(data,columns=['url','post_nummer','boligtype','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris'])
     df.to_csv('boliga_data_being_sold.csv',index=False)
-    break
