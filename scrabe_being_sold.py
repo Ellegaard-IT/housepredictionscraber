@@ -80,9 +80,11 @@ def next_page():
 
 for i in range(54):
     take_all()
+    break
 
 data = {'url': [],
         'post_nummer': [],
+        'boligtype': [],
         'boligstorrelse': [],
         'grundstorrelse': [],
         'vaerelser': [],
@@ -117,6 +119,13 @@ for home in tqdm(homes):
     except:
         data["post_nummer"].append(' ')
 
+    #boligtype
+    try:
+        ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[1]/div/app-bbr-inner-details/div/div[1]/div[1]/div[1]/div[1]/app-property-label/label/span')
+        data["boligtype"].append(ele.text)
+    except:
+        data["boligtype"].append(' ')
+
     #Boligstorrelse
     try:
         ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[1]/div/app-bbr-inner-details/div/div[1]/div[1]/div[2]/div/app-property-detail-list/ul/li[1]/app-property-detail/app-tooltip/div/span[3]')
@@ -135,6 +144,7 @@ for home in tqdm(homes):
         data["grundstorrelse"].append(temp)
     except:
         data["grundstorrelse"].append(' ')
+
     #Vaerelser
     try:
         ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[1]/div/app-bbr-inner-details/div/div[1]/div[1]/div[2]/div/app-property-detail-list/ul/li[3]/app-property-detail/app-tooltip/div/span[3]')
@@ -145,6 +155,7 @@ for home in tqdm(homes):
         data["vaerelser"].append(temp)
     except:
         data["vaerelser"].append(' ')
+
     #Skatter
     try:
         ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[1]/div/app-bbr-inner-details/div/div[1]/div[1]/div[2]/div/app-property-detail-list/ul/li[6]/app-property-detail/app-tooltip/div/span[3]')
@@ -153,6 +164,7 @@ for home in tqdm(homes):
         data["skatter"].append(ele[0])
     except:
         data["skatter"].append(' ')
+
     #Etage
     try:
         ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[1]/div/app-bbr-inner-details/div/div[1]/div[1]/div[2]/div/app-property-detail-list/ul/li[4]/app-property-detail/app-tooltip/div/span[3]')
@@ -161,6 +173,7 @@ for home in tqdm(homes):
         data["etage"].append(ele)
     except:
         data["etage"].append(' ')
+
     #Boligareal_tinglyst
     try:
         ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[1]/div/app-bbr-inner-details/div/div[1]/div[1]/div[2]/div/app-property-detail-list/ul/li[8]/app-property-detail/app-tooltip/div/span[3]')
@@ -175,11 +188,13 @@ for home in tqdm(homes):
     except:
         print('failed')
     time.sleep(0.8)
+    
     #Toiletter
     try:
         data["toiletter"].append(driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[3]/app-bbr-details-tabs/app-property-information/div/div[2]/div/div/app-generic-property-info-content[1]/div/div[2]/div/div[6]/div/span').text)
     except:
         data["toiletter"].append(' ')
+
     #Badevaerelser
     try:
         data["badevaerelser"].append(driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[3]/app-bbr-details-tabs/app-property-information/div/div[2]/div/div/app-generic-property-info-content[1]/div/div[2]/div/div[8]/div/span').text)
@@ -228,5 +243,6 @@ for home in tqdm(homes):
     except:
         data["om_byggeår"].append(' ')
 
-    df = pd.DataFrame(data,columns=['url','post_nummer','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris'])
+    df = pd.DataFrame(data,columns=['url','post_nummer','boligtype','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris'])
     df.to_csv('boliga_data_being_sold.csv',index=False)
+    break
