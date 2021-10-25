@@ -76,7 +76,7 @@ def next_page():
     except:
         last_page = True
 
-for i in range(726):
+for i in range(729):
     take_all()
 
 data = {'url': [],
