@@ -1,4 +1,3 @@
-from re import match
 import subprocess
 import sys
 import os
@@ -16,7 +15,7 @@ import time
 from tqdm import tqdm
 
 chrome_options = Options()
-chrome_options.set_headless()
+#chrome_options.set_headless()
 #chrome_options.add_argument('start-maximized')
 
 print('\n\n-------------------------------- Starting Scrape -------------------------------\n\n')
@@ -26,12 +25,31 @@ driver.get("https://www.boliga.dk/salg/resultater?searchTab=1&propertyType=3&sal
 driver.implicitly_wait(5)
 
 homes = []
-first_page = True
-last_page = False
+data = {'url': [],
+        'post_nummer': [],
+        'boligtype': [],
+        'boligstorrelse': [],
+        'grundstorrelse': [],
+        'vaerelser': [],
+        'etage': [],
+        'byggeår':[],
+        'om_byggeår':[],
+        'skatter': [],
+        'boligareal_tinglyst': [],
+        'toiletter': [],
+        'badevaerelser': [],
+        'pris': [],
+        'handelstype': [],
+        'salgsmaned': [],
+        'salgsar': []
+    }
 
-if os.path.isfile('boliga_test_data.csv'):
-    df = pd.read_csv('boliga_test_data.csv')
-    df = df.url
+old_df = None
+try:
+    if os.path.isfile('boliga_data_sold_best.csv'):
+        old_df = pd.read_csv('boliga_data_sold_best.csv')
+except:
+    pass
 
 class Home:
     def __init__(self,url) -> None:
@@ -71,11 +89,80 @@ def take_all():
     for site in driver.find_elements_by_tag_name('a.text-primary.font-weight-bolder.text-left'):
         try:
             url = site.get_attribute('href')
-            for i in range(len(df)):
-                if df.iloc(i)[0] != url:
-                    homes.append(Home(url))
+            urls = old_df[old_df['url'].str.contains(url)]
+            if old_df is not None and len(urls) > 0:
+                try:
+                    data["url"].append(urls["url"].iloc[0])
+                except:
+                    data["url"].append("")
+                try:
+                    data["post_nummer"].append(urls["post_nummer"].iloc[0])
+                except:
+                    data["post_nummer"].append("")
+                try:
+                    data["boligtype"].append(urls["boligtype"].iloc[0])
+                except:
+                    data["boligtype"].append("")
+                try:
+                    data["boligstorrelse"].append(urls["boligstorrelse"].iloc[0])
+                except:
+                    data["boligstorrelse"].append("")
+                try:
+                    data["grundstorrelse"].append(urls["grundstorrelse"].iloc[0])
+                except:
+                    data["grundstorrelse"].append("")
+                try:
+                    data["vaerelser"].append(urls["vaerelser"].iloc[0])
+                except:
+                    data["vaerelser"].append("")
+                try:
+                    data["etage"].append(urls["etage"].iloc[0])
+                except:
+                    data["etage"].append("")
+                try:
+                    data["byggeår"].append(urls["byggeår"].iloc[0])
+                except:
+                    data["byggeår"].append("")
+                try:
+                    data["om_byggeår"].append(urls["om_byggeår"].iloc[0])
+                except:
+                    data["om_byggeår"].append("")
+                try:
+                    data["skatter"].append(urls["skatter"].iloc[0])
+                except:
+                    data["skatter"].append("")
+                try:
+                    data["boligareal_tinglyst"].append(urls["boligareal_tinglyst"].iloc[0])
+                except:
+                    data["boligareal_tinglyst"].append("")
+                try:
+                    data["toiletter"].append(urls["toiletter"].iloc[0])
+                except:
+                    data["toiletter"].append("")
+                try:
+                    data["badevaerelser"].append(urls["badevaerelser"].iloc[0])
+                except:
+                    data["badevaerelser"].append("")
+                try:
+                    data["pris"].append(urls["pris"].iloc[0])
+                except:
+                    data["pris"].append("")
+                try:
+                    data["handelstype"].append(urls["handelstype"].iloc[0])
+                except:
+                    data["handelstype"].append("")
+                try:
+                    data["salgsmaned"].append(urls["salgsmaned"].iloc[0])
+                except:
+                    data["salgsmaned"].append("")
+                try:
+                    data["salgsar"].append(urls["salgsar"].iloc[0])
+                except:
+                    data["salgsar"].append("")
+            else:
+                homes.append(Home(url))
         except:
-            print(site.get_attribute('href'))
+            print('failed getting url')
     next_page()
 def next_page():
     try:
@@ -86,25 +173,8 @@ def next_page():
 
 for i in tqdm(range(int(driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-properties-list/div[3]/div/div/app-pagination/div/div[4]/div/a').text))):
     take_all()
+    break
 
-data = {'url': [],
-        'post_nummer': [],
-        'boligtype': [],
-        'boligstorrelse': [],
-        'grundstorrelse': [],
-        'vaerelser': [],
-        'etage': [],
-        'byggeår':[],
-        'om_byggeår':[],
-        'skatter': [],
-        'boligareal_tinglyst': [],
-        'toiletter': [],
-        'badevaerelser': [],
-        'pris': [],
-        'handelstype': [],
-        'salgsmaned': [],
-        'salgsar': []
-    }
 
 for home in tqdm(homes):
     driver.get(home.url)
@@ -196,7 +266,7 @@ for home in tqdm(homes):
         driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[4]/app-bbr-details-tabs/app-property-information/div/div[1]/ul/li[1]/div[1]/span').click()
     except:
         print('failed')
-    time.sleep(0.5)
+    time.sleep(1)
     #Toiletter
     try:
         data["toiletter"].append(driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[4]/app-bbr-details-tabs/app-property-information/div/div[2]/div/div/app-generic-property-info-content[1]/div/div[2]/div/div[6]/div/span').text)
@@ -213,7 +283,7 @@ for home in tqdm(homes):
         driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[4]/app-bbr-details-tabs/app-property-information/div/div[1]/ul/li[4]/div[1]/span').click()
     except:
         print('failed')
-    time.sleep(0.5)
+    time.sleep(1)
     #pris
     try:
         ele = str(home.price)
@@ -235,7 +305,7 @@ for home in tqdm(homes):
         driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[4]/app-bbr-details-tabs/app-property-information/div/div[1]/ul/li[7]/div[1]/span').click()
     except:
         print('failed')
-    #time.sleep(0.5)
+    time.sleep(1)
     
     #Byggeår
     try:
@@ -266,4 +336,4 @@ for home in tqdm(homes):
         data["salgsar"].append(' ')
 
     df = pd.DataFrame(data,columns=['url','post_nummer','boligtype','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris','handelstype','salgsmaned','salgsar'])
-    df.to_csv('boliga_test_data.csv',index=False)
+    df.to_csv('boliga_data_sold_scrabed.csv',index=False)
