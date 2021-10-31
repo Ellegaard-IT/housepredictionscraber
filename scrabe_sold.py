@@ -167,21 +167,22 @@ def take_all():
 def next_page():
     try:
         driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-properties-list/div[3]/div/div/app-pagination/div/div[4]/a').click()
-        time.sleep(1)
+        time.sleep(4)
     except:
         last_page = True
 
 for i in tqdm(range(int(driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-properties-list/div[3]/div/div/app-pagination/div/div[4]/div/a').text))):
     take_all()
-    break
-
 
 for home in tqdm(homes):
     driver.get(home.url)
-    home.price = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-inner/div[3]/app-sales-overview/div/div[1]/div/div/div[2]/table/tbody/tr[1]/td[2]/span[2]').text
-    home.salgsdato = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-inner/div[3]/app-sales-overview/div/div[1]/div/div/div[2]/table/tbody/tr[1]/td[3]/span[2]').text
-    home.handelstype = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-inner/div[3]/app-sales-overview/div/div[1]/div/div/div[2]/table/tbody/tr[1]/td[4]/span[2]').text
-    driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-inner/div[3]/div/a[1]').click()
+    try:
+        home.price = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-inner/div[3]/app-sales-overview/div/div[1]/div/div/div[2]/table/tbody/tr[1]/td[2]/span[2]').text
+        home.salgsdato = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-inner/div[3]/app-sales-overview/div/div[1]/div/div/div[2]/table/tbody/tr[1]/td[3]/span[2]').text
+        home.handelstype = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-inner/div[3]/app-sales-overview/div/div[1]/div/div/div[2]/table/tbody/tr[1]/td[4]/span[2]').text
+        driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-inner/div[3]/div/a[1]').click()
+    except:
+        pass
     time.sleep(1)
 
 

@@ -166,22 +166,20 @@ def take_all():
 def next_page():
     try:
         driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-housing-list/div[2]/app-housing-list-results/div/div[1]/div[3]/div/div/div[3]/app-pagination/div/div[4]/a').click()
-        time.sleep(1)
+        time.sleep(5)
     except:
         last_page = True
 
 for i in tqdm(range(int(driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-housing-list/div[2]/app-housing-list-results/div/div[1]/div[3]/div/div/div[3]/app-pagination/div/div[4]/div/a').text))):
     take_all()
-    break
-
 
 for home in tqdm(homes):
     if(home.url == 'https://www.boliga.dk/resultat' or home.url == None):continue
     time.sleep(1)
     driver.get(str(home.url))
     time.sleep(1)
-    home.price = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bvs/div/div[4]/div/div/div[1]/div[1]/div/app-bvs-property-price/div/div[2]/span[1]').text
     try:
+        home.price = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bvs/div/div[4]/div/div/div[1]/div[1]/div/app-bvs-property-price/div/div[2]/span[1]').text
         driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bvs/div/div[4]/div/div/div[1]/div[1]/div/app-bvs-property-price/div/div[1]/a').click()
     except:
         continue
