@@ -349,4 +349,7 @@ for home in tqdm(homes):
         data["salgsar"].append(' ')
 
     df = pd.DataFrame(data,columns=['url','post_nummer','boligtype','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris','handelstype','salgsmaned','salgsar'])
-    df.to_csv('boliga_data_sold_scrabed1.csv',index=False)
+    if len(sys.argv)>2:
+        driver.get(sys.argv[2])
+    else:
+        df.to_csv('boliga_data_sold_scrabed.csv',index=False)

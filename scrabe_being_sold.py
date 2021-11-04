@@ -31,7 +31,6 @@ print('\n\n-------------------------------- Starting Scrape --------------------
 driver = webdriver.Chrome(options=chrome_options)
 if len(sys.argv)>1:
     driver.get(sys.argv[1])
-    print(sys.argv)
 else:
     driver.get("https://www.boliga.dk/resultat?propertyType=3&zipCodes=1000-2990")
 
@@ -341,4 +340,7 @@ for home in tqdm(homes):
         pass
     
     df = pd.DataFrame(data,columns=['url','post_nummer','boligtype','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris','salgsmaned','salgsar'])
-    df.to_csv('boliga_data_being_sold_scrabed.csv',index=False)
+    if len(sys.argv)>2:
+        driver.get(sys.argv[2])
+    else:
+        df.to_csv('boliga_data_being_sold_scrabed.csv',index=False)
