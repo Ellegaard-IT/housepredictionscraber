@@ -183,7 +183,7 @@ for home in tqdm(homes):
         driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-sold-inner/div[3]/div/a[1]').click()
     except:
         pass
-    time.sleep(1)
+    time.sleep(2)
 
 
     #Post_nummer
@@ -267,7 +267,7 @@ for home in tqdm(homes):
         driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[4]/app-bbr-details-tabs/app-property-information/div/div[1]/ul/li[1]/div[1]/span').click()
     except:
         print('failed')
-    time.sleep(1)
+    time.sleep(1.4)
     #Toiletter
     try:
         data["toiletter"].append(driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[4]/app-bbr-details-tabs/app-property-information/div/div[2]/div/div/app-generic-property-info-content[1]/div/div[2]/div/div[6]/div/span').text)
@@ -284,7 +284,7 @@ for home in tqdm(homes):
         driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[4]/app-bbr-details-tabs/app-property-information/div/div[1]/ul/li[4]/div[1]/span').click()
     except:
         print('failed')
-    time.sleep(1)
+    time.sleep(1.4)
     #pris
     try:
         ele = str(home.price)
@@ -306,7 +306,7 @@ for home in tqdm(homes):
         driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[4]/app-bbr-details-tabs/app-property-information/div/div[1]/ul/li[7]/div[1]/span').click()
     except:
         print('failed')
-    time.sleep(1)
+    time.sleep(1.4)
     
     #Byggeår
     try:
@@ -337,4 +337,4 @@ for home in tqdm(homes):
         data["salgsar"].append(' ')
 
     df = pd.DataFrame(data,columns=['url','post_nummer','boligtype','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris','handelstype','salgsmaned','salgsar'])
-    df.to_csv('boliga_data_sold_scrabed.csv',index=False)
+    df.to_csv('boliga_data_sold_scrabed1.csv',index=False)
