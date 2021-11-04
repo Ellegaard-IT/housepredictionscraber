@@ -2,17 +2,26 @@ import subprocess
 import sys
 import os
 from typing import Text
-
-import selenium
-
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
+try:
+    import selenium
+except:
+    install("selenium")
+try:
+    import pandas
+except:
+    install("pandas")
+try:
+    import tqdm
+except:
+    install("tqdm")
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import pandas as pd
 import time
 from tqdm import tqdm
+import datetime
 
 chrome_options = Options()
 #chrome_options.set_headless()
@@ -20,7 +29,11 @@ chrome_options = Options()
 
 print('\n\n-------------------------------- Starting Scrape -------------------------------\n\n')
 driver = webdriver.Chrome(options=chrome_options)
-driver.get("https://www.boliga.dk/resultat?propertyType=3&zipCodes=1000-2990")
+if len(sys.argv)>1:
+    driver.get(sys.argv[1])
+    print(sys.argv)
+else:
+    driver.get("https://www.boliga.dk/resultat?propertyType=3&zipCodes=1000-2990")
 
 driver.implicitly_wait(5)
 
@@ -40,7 +53,11 @@ data = {'url': [],
         'toiletter': [],
         'badevaerelser': [],
         'pris': [],
+        'salgsmaned': [],
+        'salgsar': [],
+
     }
+dt = datetime.datetime.today()
 
 old_df = None
 try:
@@ -81,7 +98,6 @@ class Home:
 
 #Click away terms of use
 driver.find_element_by_id("declineButton").click()
-
 
 def take_all():
     for site in driver.find_elements_by_tag_name('a.house-list-item'):
@@ -160,7 +176,7 @@ def take_all():
             else:
                 homes.append(Home(url))
         except:
-            print('failed getting url')
+            pass
     next_page()
 
 def next_page():
@@ -318,5 +334,11 @@ for home in tqdm(homes):
     except:
         data["om_byggeår"].append(' ')
     
-    df = pd.DataFrame(data,columns=['url','post_nummer','boligtype','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris'])
+    try:
+        data["salgsmaned"] = dt.month
+        data["salgsar"] = dt.year
+    except:
+        pass
+    
+    df = pd.DataFrame(data,columns=['url','post_nummer','boligtype','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris','salgsmaned','salgsar'])
     df.to_csv('boliga_data_being_sold_scrabed.csv',index=False)

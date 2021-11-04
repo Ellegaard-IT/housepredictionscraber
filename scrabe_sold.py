@@ -2,12 +2,20 @@ import subprocess
 import sys
 import os
 from typing import Text
-
-import selenium
-
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
+try:
+    import selenium
+except:
+    install("selenium")
+try:
+    import pandas
+except:
+    install("pandas")
+try:
+    import tqdm
+except:
+    install("tqdm")
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import pandas as pd
@@ -20,7 +28,11 @@ chrome_options = Options()
 
 print('\n\n-------------------------------- Starting Scrape -------------------------------\n\n')
 driver = webdriver.Chrome(options=chrome_options)
-driver.get("https://www.boliga.dk/salg/resultater?searchTab=1&propertyType=3&salesDateMin=2018&saleType=1&zipcodeFrom=1000&zipcodeTo=2990&sort=date-d&page=1")
+if len(sys.argv)>1:
+    driver.get(sys.argv[1])
+    print(sys.argv)
+else:
+    driver.get("https://www.boliga.dk/salg/resultater?searchTab=1&propertyType=3&salesDateMin=2018&saleType=1&zipcodeFrom=1000&zipcodeTo=2990&sort=date-d&page=1")
 
 driver.implicitly_wait(5)
 

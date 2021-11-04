@@ -19,22 +19,32 @@ except:
 from xgboost import XGBRegressor
 import pandas as pd
 import numpy as np
+from sklearn import preprocessing
+
 
 np.set_printoptions(suppress=True)
 
 try:
-    training_data = pd.read_csv('boliga_data_sold_sorted.csv')
-    test_data = pd.read_csv('boliga_data_being_sold.csv')
+    training_data = pd.read_csv('Azure_test_data.csv')
+    test_data = pd.read_csv('boliga_data_being_sold_best.csv')
 except:
     raise Exception("The data to train or test the model cant be found!")
 
 def GetModel():
     return XGBRegressor(n_estimators=600, max_depth=6, gamma=0, max_leaves=7, eta=0.4, subsample=0.6, colsample_bytree=0.8,reg_alpha=0.625,reg_lambda=0.8333333334)
 
-training_data = training_data.drop_duplicates('url', keep="last")
+training_data = training_data.loc[training_data['handelstype'] == 'Alm. frit salg']
+training_data = training_data.drop_duplicates('url', keep='last')
+allow = ["grundstorrelse"]
+for col in training_data.columns:
+    if allow.__contains__(str(col)):
+        continue
+    training_data = training_data[training_data[col] != 0]
+    if col == "pris":
+        training_data = training_data[training_data["pris"] > 100000]
 
 #Salgsår og måned er ikke med i denne test!
-training_data = training_data.drop(columns=['url','Unnamed: 0','handelstype','salgsar','salgsmaned'])
+training_data = training_data.drop(columns=['url','handelstype','boligtype','salgsar','salgsmaned','Unnamed: 0'])
 test_data = test_data[training_data.columns]
 
 def MakeAllNumbers(df):
@@ -81,11 +91,9 @@ def EvalModelPerformance():
     from numpy import absolute
 
     cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
-
-    scores = cross_val_score(model, x, y, scoring='neg_mean_absolute_error', cv=cv, n_jobs=-1)
-
+    scores = cross_val_score(model, x, y, scoring='neg_root_mean_squared_error', cv=cv, n_jobs=-1)
     scores = absolute(scores)
-    print('Mean MAE: %.3f (%.3f)' % (scores.mean(), scores.std()) )
+    print('neg_root_mean_squared_error: %.3f (%.3f)' % (scores.mean(), scores.std()) )
 
-#XGBPrediction(run_test=True)
-#EvalModelPerformance()
+XGBPrediction(run_test=True)
+EvalModelPerformance()
