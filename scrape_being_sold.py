@@ -187,6 +187,7 @@ def next_page():
 
 for i in tqdm(range(int(driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-housing-list/div[2]/app-housing-list-results/div/div[1]/div[3]/div/div/div[3]/app-pagination/div/div[4]/div/a').text))):
     take_all()
+    break
 
 for home in tqdm(homes):
     if(home.url == 'https://www.boliga.dk/resultat' or home.url == None):continue
@@ -203,9 +204,10 @@ for home in tqdm(homes):
     try:
         data['url'].append(home.url)
         ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[1]/div/app-bbr-inner-details/div/div[1]/div[1]/div[1]/div[1]/span')
-        ele = ele.text.split('\n')[1]
-        ele = ele.split(" ")
-        data["post_nummer"].append(ele[0])
+        ele = ele.text.split('\n')
+        ele = str(ele[0]+" "+ele[1])
+        ele = ele.replace('"',"")
+        data["post_nummer"].append(ele)
     except:
         data["post_nummer"].append(' ')
 
@@ -341,6 +343,6 @@ for home in tqdm(homes):
     
     df = pd.DataFrame(data,columns=['url','post_nummer','boligtype','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris','salgsmaned','salgsar'])
     if len(sys.argv)>2:
-        driver.get(sys.argv[2])
+        df.to_csv(sys.argv[2])
     else:
         df.to_csv('boliga_data_being_sold_scrabed.csv',index=False)

@@ -197,14 +197,13 @@ for home in tqdm(homes):
         pass
     time.sleep(2)
 
-
     #Post_nummer
     try:
         data['url'].append(home.url)
         ele = driver.find_element_by_xpath('/html/body/app-root/app-scroll-position-restoration/app-main-layout/app-bbr-inner/div[1]/div/app-bbr-inner-details/div/div[1]/div[1]/div[1]/div[1]/span')
-        ele = ele.text.split("\n")
-        ele = ele[1].split(" ")
-        data["post_nummer"].append(ele[0])
+        ele = ele.text.split('\n')
+        ele = ele[0]+" "+ele[1]
+        data["post_nummer"].append(ele)
     except:
         data["post_nummer"].append(' ')
     
@@ -350,6 +349,6 @@ for home in tqdm(homes):
 
     df = pd.DataFrame(data,columns=['url','post_nummer','boligtype','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris','handelstype','salgsmaned','salgsar'])
     if len(sys.argv)>2:
-        driver.get(sys.argv[2])
+        df.to_csv(sys.argv[2])
     else:
         df.to_csv('boliga_data_sold_scrabed.csv',index=False)
