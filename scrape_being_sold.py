@@ -343,6 +343,6 @@ for home in tqdm(homes):
     
     df = pd.DataFrame(data,columns=['url','post_nummer','boligtype','boligstorrelse','grundstorrelse','vaerelser','etage','byggeår','om_byggeår','skatter','boligareal_tinglyst','toiletter','badevaerelser','pris','salgsmaned','salgsar'])
     if len(sys.argv)>2:
-        df.to_csv(sys.argv[2])
+        df.to_csv(sys.argv[2],index=False)
     else:
         df.to_csv('boliga_data_being_sold_scrabed.csv',index=False)
