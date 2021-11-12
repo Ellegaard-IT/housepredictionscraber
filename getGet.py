@@ -39,7 +39,6 @@ for i in tqdm(range(len(being_sold))):
             if s.isdigit() and len(s) == 4:
                 address = address[0] + ", "+s +" Denmark"
         else: pass
-        print(address)
         request = json.loads(requests.get("https://api.opencagedata.com/geocode/v1/json?q="+address+"%2Cdanmark&key=03c48dae07364cabb7f121d8c1519492&no_annotations=1&language=en").text)
         latitude.append(request['results'][0]['geometry']['lat'])
         longitude.append(request['results'][0]['geometry']['lng'])
