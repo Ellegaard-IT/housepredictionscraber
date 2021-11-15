@@ -47,7 +47,7 @@ for i in tqdm(range(len(being_sold))):
         longitude.append(" ")
 being_sold.insert(loc=2, column='latitude', value=latitude)
 being_sold.insert(loc=3, column='longitude', value=longitude)
-#being_sold.to_csv("boliga_data_being_sold_best_updated.csv",index=False)
+being_sold.to_csv("boliga_data_being_sold_best_updated.csv",index=False)
 
 latitude.clear()
 longitude.clear()
@@ -72,4 +72,4 @@ for i in tqdm(range(len(data_sold))):
         longitude.append(" ")
 data_sold.insert(loc=2, column='latitude', value=latitude)
 data_sold.insert(loc=3, column='longitude', value=longitude)
-#data_sold.to_csv("boliga_data_sold_best_updated.csv",index=False)
+data_sold.to_csv("boliga_data_sold_best_updated.csv",index=False)
